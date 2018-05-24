@@ -17,6 +17,8 @@ services:
     image: ineva/caddy:0.10.3
     restart: always
     network_mode: host
+    ports:
+      - "443:443"
 
 entrypoint: |
       sh -c 'echo "$$CADDY_CONFIG" > /etc/Caddyfile && /usr/bin/caddy --conf /etc/Caddyfile --log stdout'
