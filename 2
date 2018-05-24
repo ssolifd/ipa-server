@@ -1,3 +1,4 @@
+cat > docker-compose.yml<<-EOF
 version: "2"
 
 services:
@@ -16,11 +17,14 @@ services:
     image: ineva/caddy:0.10.3
     restart: always
     network_mode: host
-    entrypoint: |
+
+entrypoint: |
       sh -c 'echo "$$CADDY_CONFIG" > /etc/Caddyfile && /usr/bin/caddy --conf /etc/Caddyfile --log stdout'
     environment:
       CADDY_CONFIG: |
         mail.godoq.com {
           gzip
+          tls en@solifd.com
           proxy / localhost:9008
         }
+EOF
