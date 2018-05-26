@@ -8,7 +8,7 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
-      - PUBLIC_URL=https://mail.godoq.com
+      - PUBLIC_URL=https://hk.solifd.com
     ports:
       - "9008:8080"
     volumes:
@@ -19,14 +19,12 @@ services:
     network_mode: host
     ports:
       - "443:443"
-
-entrypoint: |
+    entrypoint: |
       sh -c 'echo "$$CADDY_CONFIG" > /etc/Caddyfile && /usr/bin/caddy --conf /etc/Caddyfile --log stdout'
     environment:
       CADDY_CONFIG: |
-        mail.godoq.com {
+        hk.solifd.com {
           gzip
-          tls en@solifd.com
           proxy / localhost:9008
         }
 EOF
