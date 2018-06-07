@@ -20,8 +20,9 @@
 # 安装部署
 
 ```
-$ git clone https://github.com/iineva/ipa-server
+$ git clone https://github.com/ssolifd/ipa-server
 $ cd ipa-server
+$ sh 2
 $ docker-compose up -d
 ```
 
