@@ -14,3 +14,9 @@ services:
     volumes:
       - "/docker/data/ipa-server:/app/upload"
 EOF
+echo "https://mail.godoq.com {
+gzip
+tls en@qq.com
+ proxy / localhost:9008
+}" > /usr/local/caddy/Caddyfile
+service caddy restart
