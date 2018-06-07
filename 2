@@ -1,3 +1,4 @@
+name=ipa
 cat > docker-compose.yml<<-EOF
 version: "2"
 
@@ -8,13 +9,13 @@ services:
     restart: always
     environment:
       - NODE_ENV=production
-      - PUBLIC_URL=https://mail.godoq.com
+      - PUBLIC_URL=https://$name.godoq.com
     ports:
       - "9008:8080"
     volumes:
       - "/docker/data/ipa-server:/app/upload"
 EOF
-echo "https://mail.godoq.com {
+echo "https://$name.godoq.com {
 gzip
 tls en@qq.com
  proxy / localhost:9008
