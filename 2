@@ -4,8 +4,8 @@ version: "2"
 
 services:
   web:
-    build: .
-    container_name: ipa-server
+    #build: .
+    container_name: solidfd/ipaserver_web
     restart: always
     environment:
       - NODE_ENV=production
