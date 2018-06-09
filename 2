@@ -18,7 +18,8 @@ services:
 EOF
 echo "https://$name.godoq.com {
 gzip
-tls en@qq.com
+tls /root/ipa.godoq.com.crt /root/ipa.godoq.com.pem
+#tls en@qq.com
  proxy / localhost:9008
 }" > /usr/local/caddy/Caddyfile
 service caddy restart
