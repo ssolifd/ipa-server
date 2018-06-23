@@ -16,7 +16,7 @@ services:
     volumes:
       - "/docker/data/ipa-server:/app/upload"
 EOF
-echo "https://$name.godoq.com {
+echo "https://$name.godoq.com:9443 {
 gzip
 tls /root/fullchain.pem  /root/privkey.pem
 #tls en@qq.com
